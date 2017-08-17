@@ -1,6 +1,5 @@
 import * as React from 'react';
 import MuiAppBar from 'material-ui/AppBar';
-//import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import {appBarTitleStyle, appBarIconeStyle} from './commonStyles';
 const appIcon = require("../res/images/ui/app_icon_48.png")
 
@@ -29,12 +28,12 @@ export default class AppBar extends React.Component<Props, State>{
   render(){
     const {title,leftIcon,onTitleClick,rightIcon} = this.props;
     return <MuiAppBar
-              titleStyle={appBarTitleStyle} 
+              titleStyle={appBarTitleStyle}
               iconStyleLeft={appBarIconeStyle}
-              title={getTitleIcon(title)} 
+              title={getTitleIcon(title)}
               onTitleTouchTap={onTitleClick}
-              iconElementLeft={leftIcon} 
+              iconElementLeft={leftIcon}
               iconElementRight={rightIcon}
-              />;
+            />;
   }
 }

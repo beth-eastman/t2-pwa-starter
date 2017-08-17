@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { List, ListItem } from 'material-ui/List';
 import {AppPageInterface} from '../Main';
+import library from '../../res/data/library';
 
 interface Props{
   appPage: AppPageInterface
@@ -8,7 +9,7 @@ interface Props{
   basePath: string;
 }
 
-const Resources: React.SFC<Props> = (props) => {
+const LibraryList: React.SFC<Props> = (props) => {
 
   const onClick = (path: string) => {
     return (event) => {
@@ -18,12 +19,12 @@ const Resources: React.SFC<Props> = (props) => {
 
   return (
     <List>
-      <ListItem primaryText="Library" onTouchTap={onClick('/library')} />
-      <ListItem primaryText="Links & Books" onTouchTap={onClick('/links-books')} />
-      <ListItem primaryText="Articles" onTouchTap={onClick('/articles')} />
+      {library.map((item) => (
+          <ListItem key={item.id} primaryText={item.title} onTouchTap={onClick('/' + item.id)} />
+      ))}
     </List>
   );
 
 }
 
-export default Resources;
+export default LibraryList;

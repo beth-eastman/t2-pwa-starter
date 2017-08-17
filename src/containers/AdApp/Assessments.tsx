@@ -1,4 +1,4 @@
-import VideosList from '../../components/AdApp/VideosList';
+import Assessments from '../../components/AdApp/Assessments';
 import {connect} from 'react-redux';
 
 const getCols = (screen) => {
@@ -21,7 +21,6 @@ const getCols = (screen) => {
 const stateToProps = (state,ownProps) => {
 
   return {
-    videos: state.videoIds.map(id => state.videos[id]),
     cols: getCols(ownProps.appPage.screen)
   }
 }
@@ -33,6 +32,7 @@ const dispatchToProps = (dispatch,ownProps) => {
     }
   }
 }
+
 export default connect(stateToProps,dispatchToProps)
 
-(VideosList);
+(Assessments);

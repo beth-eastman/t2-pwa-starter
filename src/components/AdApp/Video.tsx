@@ -8,24 +8,27 @@ import {AppPageInterface} from '../Main';
 interface MyProps {
   appPage: AppPageInterface
   video: any;
+  width: string;
 }
 
 interface MyState {
 
 }
+
 class Video extends React.Component<MyProps, MyState> {
 
 
   componentWillMount () {
     var {video} = this.props;
     this.props.appPage.setPageTitle(video.title);
+    // this.props.appPage.setMainIcon();
   }
-  render () {
-    var {video} = this.props;
 
+  render () {
+    var {width, video} = this.props;
     return (
       <div>
-        <video src={video.src} poster={video.img} controls>
+        <video id="stigma-video" width={width} src={video.src} poster={video.img} controls>
           Sorry, your browser doesn't support embedded videos.
         </video>
       </div>

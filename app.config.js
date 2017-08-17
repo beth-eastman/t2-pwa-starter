@@ -1,12 +1,11 @@
-
 const appVersion = '1.0.0';
 
 module.exports = {
-    name: 'Resilience',
-    name_long: 'AD Resilience V' + appVersion,
+    name: 'Stigma',
+    name_long: 'AD Stigma V' + appVersion,
     version: appVersion,
     theme_color: '#3F51B5',
-    background_color: "#FF9800",
+    background_color: "#3F51B5",
     dbPrefix: 'adReslience:',
     appType: 'tabs' //options are: tabs|default
 }

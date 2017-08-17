@@ -43,7 +43,6 @@ export default class MainTabs extends React.Component<any,any> {
     return (
       <div>
         <AppBar rightIcon={this.props.rightIcon} defaultTitle={this.props.title}  leftIcon={this.props.leftIcon} onTitleClick={this.props.onTitleClick} />
-        
         <Tabs
           value={this.props.tabId}
           onChange={this.handleChange}
@@ -53,7 +52,6 @@ export default class MainTabs extends React.Component<any,any> {
 
         <MainContent {...defaultProps} />
 
-        
       </div>
     );
   }

@@ -49,4 +49,3 @@ export const leftIconProps = (path:string): {leftIcon: JSX.Element, titlePath: s
                 titlePath: path
       };
 }
-
