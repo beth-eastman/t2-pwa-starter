@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import {withRouter} from 'react-router-dom';
 import {AppPageInterface} from './Main';

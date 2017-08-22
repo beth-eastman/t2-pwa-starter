@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { assessments } from 'local-t2-assessment-suite';
-
 const { Stigma, Depression, Anxiety, Worry, PostTraumaticStress } = assessments;
 
 interface Props {
@@ -15,7 +14,6 @@ const Assessment: React.SFC<Props> = (props) => {
     return (err, assessment) => {
       props.history.push(props.basePath);
     }
-
   }
 
   // props.match.params.id gets the specific assessment id
