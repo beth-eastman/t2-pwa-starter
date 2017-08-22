@@ -19,7 +19,7 @@ export interface Props {
 }
 
 export interface State {
-  
+
 }
 
 export default class NavItem extends React.Component<Props, State>{
@@ -48,14 +48,7 @@ export default class NavItem extends React.Component<Props, State>{
   }
 
   render(){
-  
+
     return <Route {...this.getCleanProps()} render={this.handleRender()} />
   }
 }
-
-
-
-
-
-
-

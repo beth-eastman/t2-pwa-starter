@@ -59,7 +59,7 @@ export let titleStyles2 = {
   fontSize: 18,
   textAlign: 'center'
 }
-export let titleStylesLeft2 = {...titleStyles2,textAlign: 'left'}
+export let titleStylesLeft2 = {...titleStyles2, textAlign: 'left'}
 
 export let contentContainer1 = {
   margin: '0px auto 0px auto',
@@ -86,23 +86,23 @@ export let homeFooterAbsolute = {
 
 export let appBarTitleStyle = {
   position: 'relative' as 'relative',
-  left: -40,
+  left: -25,
   top: 1
 }
 
 export let appBarIconeStyle = {
   position: 'relative' as 'relative',
-  left: -20
+  left: -10
 }
 
 export let toolBarContentLeft = {
   position: 'absolute' as 'absolute',
-  top: 0, 
+  top: 0,
   width: 200
 }
 
 export let toolBarContentRight = {
   position: 'absolute' as 'absolute',
-  right: 0, 
+  right: 0,
   top: 0
 }

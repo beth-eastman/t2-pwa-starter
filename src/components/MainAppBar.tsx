@@ -34,20 +34,20 @@ class MainAppBar extends React.Component<Props, State>{
   render(){
     const defaultProps = {...this.props,basePath: '/'};
     return <div>
-                <AppBar 
-                  rightIcon={this.props.rightIcon} 
-                  defaultTitle={this.props.title}  
-                  leftIcon={this.props.leftIcon} 
-                  onTitleClick={this.props.onTitleClick} 
+                <AppBar
+                  rightIcon={this.props.rightIcon}
+                  defaultTitle={this.props.title}
+                  leftIcon={this.props.leftIcon}
+                  onTitleClick={this.props.onTitleClick}
                 />
 
                 <div style={{padding: 10}}>
 
                     <MainContent {...defaultProps} />
-                    
+
                 </div>
             </div>;
- 
+
   }
 }
 
