@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {VideoInterface} from '../../res/data/videos';
 import {GridList, GridTile} from 'material-ui/GridList';
+
 export interface Props{
   videos: VideoInterface[];
   cols: number;
@@ -19,13 +20,12 @@ const VideosList: React.SFC<Props> = (props) => {
             <GridTile
               key={item.id}
               onTouchTap={() => onClick(item)}
-              
               title={item.title}
             >
               <img src={item.img} />
             </GridTile>
-        
-         
+
+
         ))}
       </GridList>
 

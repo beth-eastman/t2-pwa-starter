@@ -2,7 +2,6 @@ import * as React from 'react';
 const loadMainAppBar = require('bundle-loader?lazy!./MainAppBar');
 const loadMainTabs = require('bundle-loader?lazy!./MainTabs');
 import Bundle from './Bundle';
-// import MainAppBar from './MainAppBar';
 import LeftMenuIcon from './LeftMenuIcon';
 
 export interface AppPageInterface {
@@ -99,7 +98,7 @@ export default class Main extends React.Component<Props, State>{
       tabId
     });
   }
-  
+
   handleSetMainIcon = (leftIcon: JSX.Element) => {
     this.setState({leftIcon})
   }
@@ -118,7 +117,7 @@ export default class Main extends React.Component<Props, State>{
 
   getScreenDimensions = () => {
     const orientation = window.innerWidth >= window.innerHeight ? 'landscape' : 'portrait';
- 
+
     return {
        width: window.innerWidth,
        height: window.innerHeight,
@@ -157,16 +156,16 @@ export default class Main extends React.Component<Props, State>{
 
          resizeTimeoutId = setTimeout(
                 () => {
-                  
+
                  this.setState({
                    screen: this.getScreenDimensions()
-                 }); 
-                  
+                 });
+
                 },
               500);
        }
 
-      
+
     }
   }
   getAppPageObject = ():AppPageInterface => {
@@ -190,7 +189,7 @@ export default class Main extends React.Component<Props, State>{
     }
   }
   render(){
- 
+
     const loadComponent =  this.props.appType === 'tabs' ? loadMainTabs : loadMainAppBar;
     //async loading
     return <Bundle load={loadComponent} >
