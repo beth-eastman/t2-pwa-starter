@@ -57,8 +57,4 @@ const LeftMenu = (props) => {
     );
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 export default LeftMenu;
