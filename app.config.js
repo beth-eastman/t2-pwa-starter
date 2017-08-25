@@ -41,5 +41,6 @@ module.exports = {
     version: appVersion,
     theme_color: '#3F51B5',
     background_color: "#3F51B5",
-    dbPrefix: 'adStigma:', // prefix for a database
+    dbPrefix: 'adStigma:', // prefix for a database,
+    appType: 'tabs' //options are: tabs|default
 };
