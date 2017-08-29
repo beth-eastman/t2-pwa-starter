@@ -38,26 +38,32 @@ import {routePageWithProps,routeComponentWithProps} from './AppHOC';
 export interface Props {
   path: string;
   title: string;
-  basePath: string;
-  appPage: AppPageInterface;
+  basePath?: string;
+  appPage?: AppPageInterface;
   leftIcon?: any;
   tabIndex?: number;
   exact?: boolean;
   tab?: number;
+  titlePath?: string;
   componentPage?: React.ReactNode;
   component?: React.ReactNode
+}
+
+interface PropsForce{ //workaround
+  appPage: AppPageInterface;
+  basePath: string;
+  [propName: string]: any;
 }
 
 export interface State {
 
 }
 
-export default class NavItem extends React.Component<Props, State>{
+export default class RouteItem extends React.Component<Props, State>{
   static defaultProps: Partial<Props> = {
     exact: false,
     tab: undefined,
-    tabIndex: undefined,
-    basePath: '/'
+    tabIndex: undefined
   }
 
   renderRouteComponent = () => {
@@ -65,7 +71,7 @@ export default class NavItem extends React.Component<Props, State>{
   }
 
   handleRenderPage = () => {
-    return routePageWithProps(this.props.componentPage,this.getCleanProps(),this.props.title);
+    return routePageWithProps(this.props.componentPage,this.getCleanProps() as PropsForce);
   }
 
   getCleanProps = () => {

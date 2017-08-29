@@ -84,7 +84,7 @@ const render = (RootComponent: any) => {
 
   if(__DEVTOOLS__){
     store.subscribe(() => {
-        console.log(store.getState()); // list entire state of app
+       // console.log(store.getState()); // list entire state of app
     });
   }
 
@@ -108,7 +108,7 @@ const render = (RootComponent: any) => {
          <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
             <Provider store={store}>
               <HashRouter>
-                <RootComponent version={__APP_VERSION__} defaultTitle={"Starter App"} appType={__APP_TYPE__} />
+                <RootComponent version={__APP_VERSION__} defaultTitle={__APP_NAME__} appType={__APP_TYPE__} />
               </HashRouter>
             </Provider>
           </MuiThemeProvider>

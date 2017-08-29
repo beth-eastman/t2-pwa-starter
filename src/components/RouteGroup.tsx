@@ -35,10 +35,13 @@ import * as React from 'react';
 import {Tab} from 'material-ui/Tabs';
 import {AppPageInterface} from './Main';
 export interface Props {
-  id: string;
+  id?: string;
   appPage: AppPageInterface;
   onActive?: (tab: any, path: string) => void;
   children?: JSX.Element[];
+  defaultProps?: {
+    [propName: string]: any;
+  }
 }
 
 export interface State {
@@ -87,11 +90,15 @@ export default class RouteGroup extends React.Component<Props,any> {
   }
 
   render() {
-
-    return (
-      <div>
-        {this.props.children}
-      </div>
+    const {appPage} = this.props;
+    const childrenWithProps = React.Children.map(this.props.children,
+     (child) => {
+       return React.cloneElement(child as any, {
+         ...this.props.defaultProps,...(child as any).props, appPage: appPage
+       })
+     }
     );
+
+    return <div>{childrenWithProps}</div>
   }
 }

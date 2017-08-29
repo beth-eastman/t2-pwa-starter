@@ -35,7 +35,7 @@ import {withRouter} from 'react-router-dom';
 import StoreRoutes from './StoreDemo/StoreRoutes';
 import {AppPageInterface} from './Main';
 import RouteGroup from './RouteGroup';
-import RouteItem from './NavItem';
+import RouteItem from './RouteItem';
 
 export interface Props {
   appPage: AppPageInterface
@@ -51,9 +51,9 @@ class AppRoutes extends React.Component<Props, State>{
 
     const props = {...this.props, basePath: '/'};
 
-    return <RouteGroup appPage={this.props.appPage} id='appTabs' >
-                <RouteItem {...props} tab={0} title={'Home'} exact path="/" componentPage={MainHomePage} />
-                <RouteItem {...props} tab={0} title={'Demo'} path="/store" component={StoreRoutes} />
+    return <RouteGroup defaultProps={props} appPage={this.props.appPage}>
+                <RouteItem tab={0} title={'Home'} exact path="/" componentPage={MainHomePage} />
+                <RouteItem tab={0} title={'Demo'} path="/store" component={StoreRoutes} />
     </RouteGroup>;
 
   }

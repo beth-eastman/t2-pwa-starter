@@ -38,7 +38,7 @@ import {menuItem,leftIconProps} from '../AppHOC';
 import ProductDetails from '../../containers/StoreDemo/ProductDetails';
 import ProductsList from '../../containers/StoreDemo/ProductsList';
 import RouteGroup from '../RouteGroup';
-import RouteItem from '../NavItem';
+import RouteItem from '../RouteItem';
 
 export interface Props {
   appPage: AppPageInterface;
@@ -56,11 +56,11 @@ class StoreRoutes extends React.Component<Props, State>{
     const defaultProps = {...this.props, ...leftIconProps(basePath),basePath: basePath};
 
     const leftMenuIcon = menuItem(LeftMenuIcon,basePath);
-    console.log(this.props);
-    return <RouteGroup id='storeTabs' appPage={this.props.appPage}>
-                <RouteItem {...defaultProps} tab={0} title={"Store"} exact path={basePath} leftIcon={leftMenuIcon} componentPage={HomePage} />
-                <RouteItem {...defaultProps} tab={1} title={"Products"}  exact path={basePath + '/products'} componentPage={ProductsList} />
-                <RouteItem {...defaultProps} tabIndex={1} title={"Details"} exact path={basePath + '/products/:id'} {...leftIconProps(basePath + '/products')} componentPage={ProductDetails} />
+    console.log(defaultProps);
+    return <RouteGroup defaultProps={defaultProps} appPage={this.props.appPage}>
+                <RouteItem tab={0} title={"Store"} exact path={basePath} leftIcon={leftMenuIcon} componentPage={HomePage} />
+                <RouteItem tab={1} title={"Products"}  exact path={basePath + '/products'} componentPage={ProductsList} />
+                <RouteItem tabIndex={1} title={"Details"} exact path={basePath + '/products/:id'} {...leftIconProps(basePath + '/products')} componentPage={ProductDetails} />
            </RouteGroup>;
   }
 }
