@@ -9,7 +9,8 @@
     "test": "jest",
     "build": "webpack --config webpack.pwa.config.js",
     "start": "webpack-dev-server",
-    "serve": "node server.js"
+    "serve": "node scripts/server.js",
+    "clean": "node scripts/clean.js"
   },
   "dependencies": {
     "@types/jest": "^20.0.4",

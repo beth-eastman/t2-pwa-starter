@@ -16,11 +16,11 @@ This boilerplate includes:
 
 Before starting you should be familiar with:
 
-- [ReactJS](https://facebook.github.io/react/) 
-- [Redux](http://redux.js.org/) 
-- [Typescript](https://www.typescriptlang.org/) 
-- [React-Router V4.x](https://reacttraining.com/react-router/core/guides/philosophy) 
-- [Material UI](http://www.material-ui.com/#/) 
+- [ReactJS](https://facebook.github.io/react/)
+- [Redux](http://redux.js.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [React-Router V4.x](https://reacttraining.com/react-router/core/guides/philosophy)
+- [Material UI](http://www.material-ui.com/#/)
 
 ## Getting Started
 Clone the project:
@@ -47,6 +47,10 @@ Build the app
 
 The boilerplate is set up with a demo app of an online store. Run the demo app by starting the development server.
 
+To remove the demo app run:
+
+``yarn run clean``
+
 ## Purpose
 
 The purpose of this starter app is to help developers more quickly build SPA/PWA apps at [T2](https://github.com/Telehealth-and-Technology).
@@ -58,8 +62,8 @@ This app contains components written to handle common features/issues for apps a
 ### Directory Structure Notes
 #### src/components/
 
-Containes the reusable components of this starter app. 
-You probably won't need to edit most of these components 
+Containes the reusable components of this starter app.
+You probably won't need to edit most of these components
 but there are a couple exceptions:
 
 #### src/components/AppRoutes.tsx
@@ -97,7 +101,7 @@ The **RouteGroup** component is used in two primary things:
 
 - You can use it to establish the default properites of all **RouteItem** components nested within
 **RouteGroup**. In the example below we pass an object to the property **defaultProps**. Any properties fed to **defaultProps** are passed to each **RouteItem**. This property is optional and is only provided to keep
-things tidy. 
+things tidy.
 
 - In the example below each **RouteItem** will receive **basePath='/main'** and **title='Demo App!'**. Any properties added directly to *RouteItem* will have priority over the defaultProps added to **RouteGroup**. So in the 3rd **RouteItem** below the **title="Settings"** property will override **title="Demo App!"**
 
@@ -130,7 +134,7 @@ For example an app that has 3 routes and two tabs could be implemented with the 
   </RouteGroup>
 ```
 The first two RouteItems create a tab merely by including a **tab** property and the desired tab index.
-However notice that the 3rd route doesn't create a tab BUT when this route is active the "Products" tab will be 
+However notice that the 3rd route doesn't create a tab BUT when this route is active the "Products" tab will be
 active because we've included the **tabIndex** property which is passed an index number corresponding to the "Products" tab.
 
 **Please keep in mind that if you are more comfortable using react-router v4 the standard way you won’t break the app by not using these components.**
@@ -152,15 +156,3 @@ It provides the capability to:
 Many of these functions are used "auto-magically" by **RouteItem**.
 
 This interface provides other functions that might not be commonly used.
-
-
-
-
-
-
-
-
-
-
-
-
